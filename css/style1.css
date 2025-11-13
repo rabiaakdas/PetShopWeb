@@ -1,0 +1,443 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    background: rgba(255, 255, 255, 0.5) 
+    
+    
+}
+
+table th, table td {
+    vertical-align: bottom;
+}
+
+
+
+#leftSidebar {
+    z-index: 1; 
+    position: fixed;
+    width: 200px; 
+    height: 100%;
+    background-color: lightblue;
+    left: -200px;
+}
+
+#leftSidebar.active {
+    left: 0;
+    z-index: 10; 
+}
+
+#leftSidebar ul li {
+    list-style: none;
+    padding: 10px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.4);
+    cursor: pointer;
+    transition: all 0.5s linear;
+}
+
+#leftSidebar ul li:hover {
+    background-color: lightblue;
+}
+
+#leftSidebar ul li a {
+    color: white;
+    font-family: sans-serif;
+    text-decoration: none;
+}
+
+
+.leftSidebarButton {
+    position: absolute;
+    left: 0; /* Move the button to the far left */
+    top: 0;
+    cursor: pointer;
+}
+
+
+.leftSidebarButton::before {
+    content: "\f0c9";
+    font-family: FontAwesome;
+    color: white;
+    position: absolute;
+    font-size: 28px;
+    background-color: lightblue;
+    padding: 5px 10px;
+    transition: all 0.5s linear;
+    overflow: hidden;
+}
+
+
+.kutu1 {
+    width: 100%; 
+    height: 35px; 
+    background-color: lightblue; 
+    display: flex;
+    justify-content: space-between; 
+    align-items: center; 
+    margin: 10px auto; 
+    border: 2px solid lightblue; 
+    padding: 0 20px; 
+    
+    
+}
+
+.kayan-yazi {
+    white-space: nowrap; /* Prevents text from wrapping */
+    display: inline-block;
+    animation: kayma 10s linear infinite; /* Animation for scrolling */
+}
+
+@keyframes kayma {
+    0% {
+        transform: translateX(100%); /* Starts from the right */
+    }
+    100% {
+        transform: translateX(-100%); /* Moves to the left */
+    }}
+
+h2 {
+    text-align: center;
+    font-size: 17px;
+    color: navy;
+}
+.kutu1 h2 {
+    flex-grow: 1; /* Kutu içindeki h2 öğesini ortalar */
+    text-align: center;
+}
+
+.kutu1 .user-info {
+    display: flex; /* Kullanıcı bilgilerini yan yana yerleştirir */
+    align-items: center; /* Dikeyde ortalar */
+    gap: 10px; /* Öğeler arasında boşluk bırakır */
+}
+
+.kutu1 .user-info h4,
+.kutu1 .user-info a {
+    margin: 0; /* Yalnızca yatayda boşluk bırakır */
+}
+
+.kutu1 .user-info a {
+    padding: 5px 10px; /* Çıkış butonuna padding ekler */
+    border: 1px solid red; /* Butona kenarlık ekler */
+    background-color: yellow; /* Arka plan rengini belirler */
+    font-size: 14px; /* Yazı boyutunu biraz küçültür */
+}
+
+
+
+
+
+.container {
+    text-align: center; /* Satırdaki içeriği yatayda ortalar */
+}
+
+.kutu2 {
+    display: inline-block; /* İçeriğe göre genişlik sağlar */
+    background-color:white;
+    border: 10px groove lightblue;
+    padding: 5px 10px;
+    text-align: center;
+    box-sizing: border-box;
+
+    
+}
+
+.header-icons {
+    display: flex;
+    gap: 20px;
+    justify-content: flex-end;
+    flex-grow: 1;
+    position: relative; /* Arama kutusunu konumlandırmak için */
+}
+
+.header-icons i {
+    font-size: 20px;
+    color: navy;
+    cursor: pointer;
+}
+
+#search-box {
+    position: absolute;
+    top: 100%;
+    right: 0;
+    display: none; /* Başlangıçta gizli */
+    background-color: white;
+    padding: 5px;
+    border: 1px solid navy;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+#search-input {
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    padding: 5px;
+}
+
+.hidden {
+    display: none;
+}
+
+
+.menu {
+    display: flex;
+    justify-content: center;
+    margin-top: 20px;
+    background-color: #f8f8f8; 
+    padding: 10px;
+    border-bottom: 1px solid #ddd;
+}
+
+.menu ul {
+    list-style: none;
+    display: flex;
+    gap: 20px;
+    margin: 0;
+    padding: 0;
+}
+
+.menu ul li a {
+    text-decoration: none;
+    color: navy;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 10px;
+}
+
+.menu ul li a:hover {
+    color: white;
+    background-color: navy;
+    border-radius: 5px;
+}
+
+.product {
+    padding-top: 2em;
+}
+
+.p-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    padding: 1em;
+    width: calc(33.33% - 2em); 
+    box-shadow: 0px 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.img {
+    width: 100%;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.img img {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+@media screen and (max-width: 768px) {
+    .p-card {
+        width: calc(50% - 1em); 
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .p-card {
+        width: 100%; 
+    }
+}
+
+
+
+
+
+.product-category {
+    display: none;
+}
+
+.product-category.active {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1em;
+    justify-content: space-around;
+}
+
+.custom-body {
+    font-family: Arial, sans-serif;
+    background-color: #f5f7fa;
+    margin: 0;
+    padding: 0;
+}
+
+.features-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: flex-start;
+    padding: 20px;
+    gap: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.feature-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    flex: 1;
+    max-width: 280px;
+}
+
+.feature-card .icon {
+    font-size: 40px;
+    color: #6a5acd; /* Purple tone */
+    margin-bottom: 10px;
+}
+
+.feature-card h3 {
+    color: #6a5acd;
+    font-size: 18px;
+    margin: 10px 0;
+}
+
+.feature-card p {
+    color: #555;
+    font-size: 14px;
+    line-height: 1.5;
+}
+
+
+
+
+
+.footer {
+    background-color: #333;
+    color: #fff;
+    padding: 40px 20px;
+    font-size: 14px;
+}
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.footer-section {
+    flex: 1;
+    min-width: 200px;
+    margin: 10px 20px;
+}
+
+.footer-section h3 {
+    font-size: 18px;
+    color: #f3f3f3;
+    margin-bottom: 15px;
+}
+
+.footer-section p,
+.footer-section ul,
+.footer-section li,
+.footer-section a {
+    color: #ddd;
+    text-decoration: none;
+}
+
+.footer-section ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+.footer-section ul li {
+    margin-bottom: 10px;
+}
+
+.footer-section ul li a:hover {
+    color: blue;
+}
+
+.footer-section.social-media a {
+    color: #ddd;
+    font-size: 20px;
+    margin-right: 15px;
+    transition: color 0.3s;
+}
+
+.footer-section.social-media a:hover {
+    color: blue;
+}
+
+.footer-bottom {
+    text-align: center;
+    padding-top: 20px;
+    border-top: 1px solid #444;
+    margin-top: 20px;
+    color: #bbb;
+}
+
+
+
+
+
+/* Popup advertisement styling */
+.popup-ad {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: lightblue;
+    color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0px 0px 15px rgba(0, 0, 0, 0.3);
+    display: block; /* Initially visible */
+    z-index: 9999;
+    max-width: 500px;
+    text-align: center;
+}
+
+.popup-ad .popup-content h4 {
+    margin: 0;
+    font-size: 18px;
+    font-weight: bold;
+}
+
+.popup-ad .popup-close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    color: white;
+}
+
+.popup-ad button {
+    background-color: #f39c12;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-align: center;
+}
+
+.popup-ad button:hover {
+    background-color: #e67e22;
+}
+
+
+
