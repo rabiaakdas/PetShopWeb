@@ -131,34 +131,6 @@ php -S localhost:8000 -t .
 http://localhost:8000/php/index.php
 ```
 
-# Docker
-
-Bu depoda `Dockerfile`, `docker-compose.yml` veya `.dockerignore` bulunmuyor.
-
-# Testler
-
-Bu depoda otomatik test projesi veya test komutu bulunmuyor.
-
-| Test türü | Durum | Açıklama |
-| --- | --- | --- |
-| Unit test | Yok | Test dosyası bulunmuyor |
-| Integration test | Yok | Test altyapısı bulunmuyor |
-| UI test | Yok | Tarayıcı test dosyası bulunmuyor |
-| PHP syntax kontrolü | Elle çalıştırılabilir | PHP kurulu ortamda `php -l` kullanılabilir |
-
-PHP söz dizimi kontrolü için örnek komut:
-
-```bash
-php -l php/index.php
-php -l php/login.php
-php -l php/kayit.php
-php -l php/sepet_islem.php
-```
-
-# Test Kullanıcıları
-
-Kodda seed dosyası, SQL dump veya hazır test kullanıcısı oluşturan bir betik bulunmuyor.
-
 # API Endpointleri
 
 Projede REST API controller yapısı bulunmuyor. Aşağıdaki tablo, HTTP ile erişilebilen PHP ve HTML giriş noktalarını gösterir.
@@ -196,54 +168,6 @@ Projede migration, SQL dump veya tablo oluşturma betiği bulunmuyor. Aşağıda
 | `siparis_urunleri` | `sepet_islem.php` içinde sipariş satırları için kullanılır |
 | `urunler` | `sepet_islem.php` içinde stok kontrolü ve stok güncelleme için kullanılır |
 
-# Konfigürasyon
-
-Veritabanı bağlantı bilgileri PHP dosyalarında sabit değişkenler olarak tutulur. `appsettings`, `.env` veya JSON konfigürasyon dosyası bulunmuyor.
-
-| Dosya | Bağlantı Değişkeni | Veritabanı |
-| --- | --- | --- |
-| `php/baglanti.php` | `$baglanti` | `petshop` |
-| `php/db_connection.php` | `$conn` | `petshop` |
-| `php/addToCart.php` | `$conn` | `petshop` |
-| `php/sepet_islem.php` | `$conn` | `petshop` |
-
-Kodda kullanılan değerlerin belgelenmiş gösterimi:
-
-```json
-{
-  "database": {
-    "host": "localhost",
-    "username": "root",
-    "password": "<secret>",
-    "name": "petshop"
-  },
-  "session": {
-    "enabled": true
-  },
-  "cookies": {
-    "user_preference_days": 30,
-    "cart_cookie": "sepet"
-  }
-}
-```
-
-# NuGet Paketleri
-
-Depoda `.csproj` dosyası bulunmadığı için NuGet paketi yoktur. Ayrıca `composer.json` ve `package.json` dosyaları da bulunmuyor.
-
-# .NET Dosya Analizi
-
-Kullanıcı isteğinde listelenen .NET dosya ve klasörleri depoda bulunmuyor.
-
-| İncelenen Öğe | Durum |
-| --- | --- |
-| Solution, `.csproj`, `Program.cs` | Yok |
-| `appsettings`, `launchSettings` | Yok |
-| Controllers, Api Controllers, Areas | Yok |
-| Services, Interfaces, Repositories | Yok |
-| Entity sınıfları, DTO, ViewModels | Yok |
-| Validators, Middleware, Extensions | Yok |
-| Migrations, Test projesi, GitHub Actions | Yok |
 
 # Lisans
 
